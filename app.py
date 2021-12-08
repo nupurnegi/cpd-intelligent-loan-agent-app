@@ -110,30 +110,30 @@ def generate_input_lines():
 app.jinja_env.globals.update(generate_input_lines=generate_input_lines)
 
 
-def get_token():
-    auth_token = os.environ.get('AUTH_TOKEN')
-    auth_username = os.environ.get('AUTH_USERNAME')
-    auth_password = os.environ.get('AUTH_PASSWORD')
-    auth_url = os.environ.get('AUTH_URL')
+# def get_token():
+#     auth_token = os.environ.get('AUTH_TOKEN')
+#     auth_username = os.environ.get('AUTH_USERNAME')
+#     auth_password = os.environ.get('AUTH_PASSWORD')
+#     auth_url = os.environ.get('AUTH_URL')
 
-    if (auth_token):
-        # All three are set. bad bad!
-        if (auth_username and auth_password):
-            raise EnvironmentError('[ENV VARIABLES] please set either "AUTH_TOKEN" or ("AUTH_USERNAME", "AUTH_PASSWORD", and "AUTH_URL"). Not both.')
-        # Only TOKEN is set. good.
-        else:
-            return auth_token
-    else:
-        # Nothing is set. bad!
-        if not (auth_username and auth_password):
-            raise EnvironmentError('[ENV VARIABLES] please set "AUTH_USERNAME", "AUTH_PASSWORD", and "AUTH_URL" as "TOKEN" is not set.')
-        # Only USERNAME, PASSWORD are set. good.
-        else:
-            response_preauth = requests.get(auth_url, auth=HTTPBasicAuth(auth_username, auth_password), verify=False)
-            if response_preauth.status_code == 200:
-                return json.loads(response_preauth.text)['accessToken']
-            else:
-                raise Exception(f"Authentication returned {response_preauth}: {response_preauth.text}")
+#     if (auth_token):
+#         # All three are set. bad bad!
+#         if (auth_username and auth_password):
+#             raise EnvironmentError('[ENV VARIABLES] please set either "AUTH_TOKEN" or ("AUTH_USERNAME", "AUTH_PASSWORD", and "AUTH_URL"). Not both.')
+#         # Only TOKEN is set. good.
+#         else:
+#             return auth_token
+#     else:
+#         # Nothing is set. bad!
+#         if not (auth_username and auth_password):
+#             raise EnvironmentError('[ENV VARIABLES] please set "AUTH_USERNAME", "AUTH_PASSWORD", and "AUTH_URL" as "TOKEN" is not set.')
+#         # Only USERNAME, PASSWORD are set. good.
+#         else:
+#             response_preauth = requests.get(auth_url, auth=HTTPBasicAuth(auth_username, auth_password), verify=False)
+#             if response_preauth.status_code == 200:
+#                 return json.loads(response_preauth.text)['accessToken']
+#             else:
+#                 raise Exception(f"Authentication returned {response_preauth}: {response_preauth.text}")
 
 
 class riskForm():
@@ -187,23 +187,24 @@ class riskForm():
         
             print("Payload is: ")
             print(payload_scoring)
-            
-            header_online = {
-                'Cache-Control': 'no-cache',
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + get_token()
-            }
+
+            API_KEY=os.environ.get('API_KEY')
+            token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={"apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
+            mltoken = token_response.json()["access_token"]
+
+            header_online = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + mltoken}
+
             response_scoring = requests.post(
                 scoring_href,
-                verify=False,
                 json=payload_scoring,
                 headers=header_online)
-            result = response_scoring.text
-            print("Result is ", result)
-            result_json = json.loads(result)
+            result = response_scoring.json()
 
-            result_keys = result_json['predictions'][0]['fields']
-            result_vals = result_json['predictions'][0]['values']
+            print("Result is ", result)
+
+            # result_json = json.loads(result)
+            result_keys = result["predictions"][0]["fields"]
+            result_vals = result["predictions"][0]["values"]
 
             result_dict = dict(zip(result_keys, result_vals[0]))
 

@@ -318,7 +318,7 @@
       </div>
       <div class="container right">
         <div class="content">
-          <p>Create these services and configure the credentials in the code pattern with just a click of button.</p>
+          <p>Create these services with just a click of button.</p>
           <a class="button is-dark is-medium" title="Create IBM Watson Services" href="didact://?commandId=extension.sendToTerminal&text=LoanAgent%7Ccreate-ibm-services%7CLoanAgent|chmod%20%2Bx%20.%2Fcreate-ibm-cloud-services.sh%20%26%26%20.%2Fcreate-ibm-cloud-services.sh">Create IBM Watson Services</a>
         </div>
       </div>

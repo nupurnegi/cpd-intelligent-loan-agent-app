@@ -195,7 +195,7 @@ class riskForm():
             print("Payload is: ")
             print(payload_scoring)
 
-            API_KEY=os.environ.get('API_KEY')
+            API_KEY=os.environ.get('API_Key')
             token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={"apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
             mltoken = token_response.json()["access_token"]
 

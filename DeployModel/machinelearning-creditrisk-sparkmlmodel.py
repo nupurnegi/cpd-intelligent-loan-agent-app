@@ -100,7 +100,7 @@ print(classification_report(y_test, y_pred, target_names=['Risk', 'No Risk']))
 from ibm_watson_machine_learning import APIClient
 
 wml_credentials = {
-  "apikey": "vZckTa66fQ5vJRD3GUMU_MyiqhK_pu8lmphZNOf2AnA-",
+  "apikey": "<YOUR_APIKEY>",
   "url": "https://us-south.ml.cloud.ibm.com"
 }
 client = APIClient(wml_credentials)

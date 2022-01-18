@@ -11,8 +11,8 @@ ibmcloud resource service-instance-delete $servicename -f
 # rm watsonml.json
 # rm cp-wml.txt
 
-servicename="cp-wstudio"
+# servicename="cp-wstudio"
 # ibmcloud resource service-key-delete "$servicename-creds" -f
-ibmcloud resource service-instance-delete $servicename -f
+# ibmcloud resource service-instance-delete $servicename -f
 # rm watsonstudio.json
 # rm cp-wstudio.txt

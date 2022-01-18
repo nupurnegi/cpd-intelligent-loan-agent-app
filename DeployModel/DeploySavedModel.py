@@ -19,7 +19,7 @@ wml_credentials = {
 client = APIClient(wml_credentials)
 
 MODEL_NAME = "Personal Loan Prediction model"
-DEPLOYMENT_SPACE_NAME = "Personal Loan Prediction model"
+DEPLOYMENT_SPACE_NAME = "PersonalLoanPredictionModel"
 
 client.spaces.list()
 all_spaces = client.spaces.get_details()['resources']

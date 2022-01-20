@@ -67,11 +67,10 @@
                   <th>Attribute</th>
                   <th>Value</th>
                 </tr>
-          
-                {% for k in request.form.keys() %}
+                {% for (k,i) in zip(request.form.keys(),keystag)  %}
                   <tr>
-                    <td>{{k}}</td>
-                    <td>{{request.form[k]}}</td>
+                    <td>{{i}}</td>
+                    <td>{{(((request.form[k].replace("_"," ")).replace("greater",">")).replace("less","<"))}}</td>
                   </tr>
                 {% endfor %}
           

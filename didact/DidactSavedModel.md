@@ -381,12 +381,6 @@
       </div>
       <div class="container right">
         <div class="content">
-          <p>Copy the <b>MODEL_URL</b> from the terminal and paste it in .env file.</p>
-           <a class="button is-dark is-medium" title="Open File" href="didact://?commandId=extension.openFile&text=nodejs%20terminal%7Cconfigure-application%7C${CHE_PROJECTS_ROOT}/cpd-intelligent-loan-agent-app/.env">Open File</a>
-        </div>
-      </div>
-      <div class="container right">
-        <div class="content">
           <p>Start the Application</p>
           <a class="button is-dark is-medium" title="Start App" href="didact://?commandId=extension.sendToTerminal&text=nodejs%20terminal%7Cstart-app%7Cnodejs%20terminal|python3.8%20app.py">Start App</a>
         </div>
@@ -395,7 +389,7 @@
     <div class="footer">
       <div class="content" style="padding:30px;padding-left:60px;padding-bottom: 0px;">
         <p>If you'd like to make changes and explore the application, make sure to stop it first!</p>
-        <a class="button is-dark is-medium" title="Stop Running Application" href="didact://?commandId=vscode.didact.sendNamedTerminalCtrlC&text=nodejs%20terminal">Stop Application</a>
+        <a class="button is-dark is-medium" title="Stop Running Application" href="didact://?commandId=vscode.didact.sendNamedTerminalCtrlC&text=nodejs%20terminal">Stop Running Application</a>
         <p class="afterbutton">The stage is yours!</p>
         <a class="button is-dark is-medium" title="Explore the Code" href="didact://?commandId=extension.openFile&text=nodejs%20terminal%7Copen-file%7C${CHE_PROJECTS_ROOT}/cpd-intelligent-loan-agent-app/templates/input.html">Explore the Code</a>
         <p class="afterbutton ">To view the changes you've made, re-launch the application</p>

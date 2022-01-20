@@ -382,7 +382,7 @@
       <div class="container right">
         <div class="content">
           <p>Start the Application</p>
-          <a class="button is-dark is-medium" title="Start App" href="didact://?commandId=extension.sendToTerminal&text=nodejs%20terminal%7Cstart-app%7Cnodejs%20terminal|python3.8%20app.py">Start App</a>
+          <a class="button is-dark is-medium" title="Start Application" href="didact://?commandId=extension.sendToTerminal&text=nodejs%20terminal%7Cstart-app%7Cnodejs%20terminal|python3.8%20app.py">Start Application</a>
         </div>
       </div>
     </div>

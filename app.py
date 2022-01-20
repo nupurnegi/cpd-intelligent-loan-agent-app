@@ -239,6 +239,13 @@ class riskForm():
             yes_percent = result_dict["probability"][1] * 100
             flash('Percentage of this loan representing risk is: %.0f%%'
                   % yes_percent)
+
+            keystag1 = list(floatstag.keys())
+            keystag2 = list(intstag.keys())
+            keystag3 = list(stringstag.keys())
+            keystag = keystag1+keystag2+keystag3
+            # print(keystag)
+
             return render_template(
                 'score.html',
                 result=result_dict,
@@ -246,7 +253,9 @@ class riskForm():
                 yes_percent=yes_percent,
                 no_percent=no_percent,
                 response_scoring=response_scoring,
-                labels=labels)
+                labels=labels,
+                keystag=keystag,
+                zip=zip)
 
         else:
             return render_template('input.html')

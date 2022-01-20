@@ -272,7 +272,7 @@
 </head>
   <body>
     <div class="apptitle">
-      Intelligent Bank Loan application for Developer Technology Sandbox
+      Intelligent Bank Loan application for IBM Developer Technology Sandbox
     </div>
   <div class="subheading">
     Build a web application using Python Flask to analyze risks involved when trying to approve loans.

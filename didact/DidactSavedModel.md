@@ -264,12 +264,15 @@
     margin-top: 5px;
     margin-bottom:-50px;
   }
+  a:hover {
+  color: blue;
+}
 }
 </style>
 </head>
   <body>
     <div class="apptitle">
-      Intelligent bank loan application for IBM® Developer Playground
+      Intelligent Bank Loan application for Developer Technology Sandbox
     </div>
   <div class="subheading">
     Build a web application using Python Flask to analyze risks involved when trying to approve loans.
@@ -277,7 +280,7 @@
     <div class="header">
       <div class="right-content">
         <div>
-            In a typical bank loan department, the loan agent receives an application from a customer. The loan then considers several factors to decide whether the loan is approved or rejected. </br></br>To help ease this decision-making process, this application explains how to build a web-based application using Python Flask that the loan agent can use to make these decisions. This enables the loan agent to analyze the risk involved while trying to approve the loan.
+            In a typical bank loan department, the loan agent receives an application from a customer. The agent then considers several factors to decide whether the loan can be approved or should be rejected. </br></br>To help ease this decision-making process, this solution explains how to build a web-based application using Python Flask, that the loan agent can use to make these decisions. This will enable the loan agent to analyze the risk involved while trying to approve the loan.
         </div>
       </div>
     </div>
@@ -302,25 +305,25 @@
     </div>
    </div>
     <div class="section">
-   <p style="font-size:20px">Instructions</p>
+   <p style="font-size:20px">Instructions: Follow all the below steps in proper sequence to avoid failure.</p>
    </div>
     <div class="timeline">
         <div style="margin-top:0px;padding-top:0px;" class="container right">
             <div class="content">
-                <p>To begin, we'll need to open a terminal</p>
+                <p>Begin with opening the custom terminal</p>
                 <a class="button is-dark is-medium" title="Open Terminal" href="didact://?commandId=terminal-for-nodejs-container:new">Open Terminal</a><br>
             </div>
         </div>
       <div class="container right">
         <div class="content">
-          <p>Next, clone the GitHub repository</p>
+          <p>Clone the GitHub repository</p>
           <a class="button is-dark is-medium" title="Clone the Repo" href="didact://?commandId=extension.sendToTerminal&text=nodejs%20terminal%7Cget-code%7Cnodejs%20terminal|git%20clone%20https://github.com/nupurnegi/cpd-intelligent-loan-agent-app.git;cd%20cpd-intelligent-loan-agent-app">Get Code</a>
         </div>
       </div>
       <div class="container right">
         <div class="content">
           <p>Create IBM Services</p>
-          <p>You need to be logged in to your IBM Cloud account in the Developer Playground to create services.</p>
+          <p>Login to your IBM Cloud account from the Developer Technology Sandbox to create services.</p>
           <a class="button is-dark is-medium" title="Login to IBM Cloud" href="didact://?commandId=extension.sendToTerminal&text=nodejs%20terminal%7Clogin-ibmcloud%7Cnodejs%20terminal|ibmcloud%20login%20%26%26%20ibmcloud%20target%20--cf%20%26%26%20ibmcloud%20target%20-g%20Default">Login to IBM Cloud</a>
         </div>
       </div>
@@ -333,24 +336,24 @@
       <div class="container right">
         <div class="content">
             <p>IBM cloud API key is required to deploy the model in the deployment space.</p>
-            <p>Below button to generate api key via IBM cloud CLI commands and save it in a key_file.</p><br>
+            <p>Click the below button to generate API key via IBM cloud CLI commands which will be saved in a key_file.</p><br>
             <a class="button is-dark is-medium" title="Generate API key" href="didact://?commandId=extension.sendToTerminal&text=nodejs%20terminal%7Cgenerate-api-token%7Cnodejs%20terminal|cd%20${CHE_PROJECTS_ROOT}/cpd-intelligent-loan-agent-app;ibmcloud%20iam%20api-key-create%20ApiKey-loanAgent%20-d%20'this is API key for loanAgent'%20--file%20${CHE_PROJECTS_ROOT}/cpd-intelligent-loan-agent-app/key_file">Generate api key</a><br> 
         </div>
       </div>
       <div class="container right">
         <div class="content">
-          <p>Go to <a href="https://dataplatform.cloud.ibm.com/home2?context=cpdaas">IBM CloudPak for data</a> and login with your IBM id in <b>Dallas</b> region. </p> Once you login follow the below steps to create a new deployment space to deploy a machine learning model.
-          <p>Step 1 : Go to the hamburger (☰) menu and click Deployment > View all spaces as shown in the figure below.</p>
+          <p>Go to <a href="https://dataplatform.cloud.ibm.com/home2?context=cpdaas">IBM CloudPak for data</a> and login with your IBM ID in <b>Dallas</b> region. </p> After login follow the below steps to create a new deployment space to deploy a machine learning model.
+          <p>Step 1 : Go to the hamburger (☰) menu and click Deployment <b>View all spaces</b> as shown in the figure below.</p>
           <img src = "https://raw.githubusercontent.com/nupurnegi/cpd-intelligent-loan-agent-app/master/didact/imagesSavedModel/LoanAgent1.png" width = "750" height= "750">
           <p>Step 2 : Next click on <b>New deployment space +</b> button as shown in the figure below.</p>
           <img src = "https://raw.githubusercontent.com/nupurnegi/cpd-intelligent-loan-agent-app/master/didact/imagesSavedModel/LoanAgent2.png" width = "750" height= "750">
-          <p>Step 3 : Create an empty space by selecting <b>Create an empty space</b>.</p>
+          <p>Step 3 : If prompted with the below screen, click on <b>Create an empty space</b>.</p>
           <img src = "https://raw.githubusercontent.com/nupurnegi/cpd-intelligent-loan-agent-app/master/didact/imagesSavedModel/LoanAgent3.png" width = "750" height= "750">
-          <p>Step 4 : Download the model as zip file. You will be deploying this model in the next steps.</p></br>
+          <p>Step 4 : Download the Personal Loan Prediction Model as a zip file. This model will be deployed in the deployment space.</p></br>
           <a class="button is-dark is-medium" href="https://github.com/nupurnegi/cpd-intelligent-loan-agent-app/raw/master/PersonalLoanPredictionModel.zip">Download</a></br></br>
-          <p>Step 5 : Select the storage and machine learning service. <b>Browser locally</b> to add the model zip file you downloaded in the previous step and Click <b>Create</b></p>
+          <p>Step 5 : Give your deployment space a name and remember the name for later use. Select the storage and machine learning service. <b>Browse locally</b> to add the model zip file downloaded in the previous step and Click <b>Create</b></p>
           <img src = "https://raw.githubusercontent.com/nupurnegi/cpd-intelligent-loan-agent-app/master/didact/imagesSavedModel/LoanAgent4.png" width = "750" height= "750">
-          <p>Step 6 : Now your need to click on <b>View new space</b> to open up the deployment space.</p>
+          <p>Step 6 : Click on <b>View new space</b> to open up the deployment space.</p>
           <img src = "https://raw.githubusercontent.com/nupurnegi/cpd-intelligent-loan-agent-app/master/didact/imagesSavedModel/LoanAgent7.png" width = "750" height= "750">
           <p>Step 7 : Go to assets and select the model.</p>
           <img src = "https://raw.githubusercontent.com/nupurnegi/cpd-intelligent-loan-agent-app/master/didact/imagesSavedModel/LoanAgent5.png" width = "750" height= "750">
@@ -360,7 +363,7 @@
       </div>
       <div class="container right">
         <div class="content">
-          <p>Paste the Model ID and add your Deployment Space Name in .env file.</p>
+          <p>Paste the Model ID and add the Deployment Space Name to the .env file.</p>
            <a class="button is-dark is-medium" title="Open File" href="didact://?commandId=extension.openFile&text=nodejs%20terminal%7Cconfigure-application%7C${CHE_PROJECTS_ROOT}/cpd-intelligent-loan-agent-app/.env">Open File</a>
         </div>
       </div>
@@ -392,7 +395,7 @@
     <div class="footer">
       <div class="content" style="padding:30px;padding-left:60px;padding-bottom: 0px;">
         <p>If you'd like to make changes and explore the application, make sure to stop it first!</p>
-        <a class="button is-dark is-medium" title="Stop Running Application" href="didact://?commandId=vscode.didact.sendNamedTerminalCtrlC&text=nodejs%20terminal">Stop Running Application</a>
+        <a class="button is-dark is-medium" title="Stop Running Application" href="didact://?commandId=vscode.didact.sendNamedTerminalCtrlC&text=nodejs%20terminal">Stop Application</a>
         <p class="afterbutton">The stage is yours!</p>
         <a class="button is-dark is-medium" title="Explore the Code" href="didact://?commandId=extension.openFile&text=nodejs%20terminal%7Copen-file%7C${CHE_PROJECTS_ROOT}/cpd-intelligent-loan-agent-app/templates/input.html">Explore the Code</a>
         <p class="afterbutton ">To view the changes you've made, re-launch the application</p>

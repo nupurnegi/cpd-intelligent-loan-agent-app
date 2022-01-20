@@ -42,7 +42,21 @@ strings = {
     "LOAN PURPOSE": ["repairs", "appliances", "car_new", "furniture", "car_used", "business", "radio_tv", "education", "vacation", "other", "retraining"],
     "OTHERS ON LOAN": ["none", "co-applicant", "guarantor"]
 }
-
+stringstag = {
+    "CHECKING STATUS": ["no checking", "less 0", "0 to 200", "greater 200"],
+    "CREDIT HISTORY": ["outstanding credit", "prior payments delayed", "credits paid to date", "all credits paid back", "no credits"],
+    "EMPLOYMENT DURATION": ["unemployed", "less 1", "1 to 4", "4 to 7", "greater 7"],
+    "EXISTING SAVINGS": ["unknown", "less 100", "100 to 500", "500 to 1000", "greater 1000"],
+    "FOREIGN WORKER": ["yes", "no"],
+    "HOUSING": ["own", "free", "rent"],
+    "INSTALLMENT PLANS": ["none", "stores", "bank"],
+    "JOB": ["skilled", "management self-employed", "unemployed", "unskilled"],
+    "OWNS PROPERTY": ["car other", "savings insurance", "unknown", "real estate"],
+    "SEX": ["female", "male"],
+    "TELEPHONE": ["yes", "none"],
+    "LOAN PURPOSE": ["repairs", "appliances", "car new", "furniture", "car used", "business", "radio tv", "education", "vacation", "other", "retraining"],
+    "OTHERS ON LOAN": ["none", "co-applicant", "guarantor"]
+} 
 # min, max, default value
 floats = {
     "INSTALLMENT PERCENT": [1, 10, 3],
@@ -96,13 +110,13 @@ def generate_input_lines():
         counter = counter + 1
 
     counter = 0
-    for k in strings.keys():
+    for k in stringstag.keys():
         if (counter % 2 == 0):
             result += f'<tr>'
         result += f'<td>{k}'
         result += f'<select class="form-control" name="{k}">'
-        for value in strings[k]:
-            result += f'<option value="{value}" selected>{value}</option>'
+        for value, j in zip(strings[k], stringstag[k]):
+            result += f'<option value="{value}" selected>{j}</option>'
         result += f'</select>'
         result += f'</td>'
         if (counter % 2 == 1):

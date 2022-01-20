@@ -43,15 +43,15 @@ strings = {
     "OTHERS ON LOAN": ["none", "co-applicant", "guarantor"]
 }
 stringstag = {
-    "CHECKING STATUS": ["no checking", "less 0", "0 to 200", "greater 200"],
+    "CHECKING STATUS": ["no checking", "< 0", "0 to 200", "> 200"],
     "CREDIT HISTORY": ["outstanding credit", "prior payments delayed", "credits paid to date", "all credits paid back", "no credits"],
-    "EMPLOYMENT DURATION": ["unemployed", "less 1", "1 to 4", "4 to 7", "greater 7"],
-    "EXISTING SAVINGS": ["unknown", "less 100", "100 to 500", "500 to 1000", "greater 1000"],
+    "EMPLOYMENT DURATION": ["unemployed", "< 1", "1 to 4", "4 to 7", "> 7"],
+    "EXISTING SAVINGS": ["unknown", "< 100", "100 to 500", "500 to 1000", "> 1000"],
     "FOREIGN WORKER": ["yes", "no"],
     "HOUSING": ["own", "free", "rent"],
     "INSTALLMENT PLANS": ["none", "stores", "bank"],
     "JOB": ["skilled", "management self-employed", "unemployed", "unskilled"],
-    "OWNS PROPERTY": ["car other", "savings insurance", "unknown", "real estate"],
+    "OWNS PROPERTY": ["car", "savings insurance", "unknown", "real estate"],
     "SEX": ["female", "male"],
     "TELEPHONE": ["yes", "none"],
     "LOAN PURPOSE": ["repairs", "appliances", "car new", "furniture", "car used", "business", "radio tv", "education", "vacation", "other", "retraining"],

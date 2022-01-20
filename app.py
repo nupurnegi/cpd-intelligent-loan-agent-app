@@ -59,17 +59,17 @@ stringstag = {
 } 
 # min, max, default value
 floats = {
-    "INSTALLMENT PERCENT": [1, 10, 3],
-    "LOAN AMOUNT": [200, 750000, 3500]
+    "Installment Percent": [1, 10, 3],
+    "Loan Amount": [200, 750000, 3500]
 }
 
 # min, max, default value
 ints = {
-    "AGE": [18, 80, 35],
-    "DEPENDENTS": [0, 10, 1],
-    "CURRENT RESIDENCE DURATION": [1, 10, 3],
-    "EXISTING CREDITS COUNT": [1, 7, 1],
-    "LOAN DURATION": [1, 72, 24]
+    "Age": [18, 80, 35],
+    "Dependents": [0, 10, 1],
+    "Current Residence Duration": [1, 10, 3],
+    "Existing Credits Count": [1, 7, 1],
+    "Loan Duration": [1, 72, 24]
 }
 
 labels = ["No Risk", "Risk"]
@@ -104,12 +104,12 @@ def generate_input_lines():
         result += f'<td>{k}'
         result += f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required (this.value)">'
         result += f'</td>'
+        result += f'<br>'
         if (counter % 2 == 1):
             result += f'</tr>'
         counter = counter + 1
 
     counter = 0
-    # for k, i in zip(strings.keys(), stringstag.keys()):
     for k in strings.keys():
         if (counter % 2 == 0):
             result += f'<tr>'

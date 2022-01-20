@@ -53,6 +53,9 @@ from datetime import datetime
 now = datetime.now() # current date and time
 date=now.strftime("%Y")+"-"+now.strftime("%m")+"-"+now.strftime("%d")
 
+
 modelurl = scoring_endpoint+"?version="+date
+
+#add the model URL to .env file
 with open(".env", "a") as f:
     f.write("\n#MODEL URL\nMODEL_URL=\""+modelurl+"\"\n")

@@ -28,34 +28,34 @@ app.config.update(dict(
 ))
 
 strings = {
-    "CHECKINGSTATUS": ["no_checking", "less_0", "0_to_200", "greater_200"],
-    "CREDITHISTORY": ["outstanding_credit", "prior_payments_delayed", "credits_paid_to_date", "all_credits_paid_back", "no_credits"],
-    "EMPLOYMENTDURATION": ["unemployed", "less_1", "1_to_4", "4_to_7", "greater_7"],
-    "EXISTINGSAVINGS": ["unknown", "less_100", "100_to_500", "500_to_1000", "greater_1000"],
-    "FOREIGNWORKER": ["yes", "no"],
+    "CHECKING STATUS": ["no_checking", "less_0", "0_to_200", "greater_200"],
+    "CREDIT HISTORY": ["outstanding_credit", "prior_payments_delayed", "credits_paid_to_date", "all_credits_paid_back", "no_credits"],
+    "EMPLOYMENT DURATION": ["unemployed", "less_1", "1_to_4", "4_to_7", "greater_7"],
+    "EXISTING SAVINGS": ["unknown", "less_100", "100_to_500", "500_to_1000", "greater_1000"],
+    "FOREIGN WORKER": ["yes", "no"],
     "HOUSING": ["own", "free", "rent"],
-    "INSTALLMENTPLANS": ["none", "stores", "bank"],
+    "INSTALLMENT PLANS": ["none", "stores", "bank"],
     "JOB": ["skilled", "management_self-employed", "unemployed", "unskilled"],
-    "OWNSPROPERTY": ["car_other", "savings_insurance", "unknown", "real_estate"],
+    "OWNS PROPERTY": ["car_other", "savings_insurance", "unknown", "real_estate"],
     "SEX": ["female", "male"],
     "TELEPHONE": ["yes", "none"],
-    "LOANPURPOSE": ["repairs", "appliances", "car_new", "furniture", "car_used", "business", "radio_tv", "education", "vacation", "other", "retraining"],
-    "OTHERSONLOAN": ["none", "co-applicant", "guarantor"]
+    "LOAN PURPOSE": ["repairs", "appliances", "car_new", "furniture", "car_used", "business", "radio_tv", "education", "vacation", "other", "retraining"],
+    "OTHERS ON LOAN": ["none", "co-applicant", "guarantor"]
 }
 
 # min, max, default value
 floats = {
-    "INSTALLMENTPERCENT": [1, 10, 3],
-    "LOANAMOUNT": [200, 750000, 3500]
+    "INSTALLMENT PERCENT": [1, 10, 3],
+    "LOAN AMOUNT": [200, 750000, 3500]
 }
 
 # min, max, default value
 ints = {
     "AGE": [18, 80, 35],
     "DEPENDENTS": [0, 10, 1],
-    "CURRENTRESIDENCEDURATION": [1, 10, 3],
-    "EXISTINGCREDITSCOUNT": [1, 7, 1],
-    "LOANDURATION": [1, 72, 24]
+    "CURRENT RESIDENCE DURATION": [1, 10, 3],
+    "EXISTING CREDITS COUNT": [1, 7, 1],
+    "LOAN DURATION": [1, 72, 24]
 }
 
 labels = ["No Risk", "Risk"]

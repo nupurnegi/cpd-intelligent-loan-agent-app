@@ -77,11 +77,10 @@ labels = ["No Risk", "Risk"]
 
 def generate_input_lines():
     
-    f = open("key_file", "r")
-    obj=json.loads(f.read())
-    apikey=obj["apikey"]
-    with open(".env", "a") as f:
-        f.write("\n#Api key\nAPI_Key="+apikey+"\n")
+    # f = open("key_file", "r")
+    # obj=json.loads(f.read())
+    # apikey=obj["apikey"]
+    API_KEY = os.environ.get('API_Key')
         
     result = f'<table align="center">'
 

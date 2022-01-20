@@ -394,7 +394,7 @@
         <a class="button is-dark is-medium" title="Explore the Code" href="didact://?commandId=extension.openFile&text=nodejs%20terminal%7Copen-file%7C${CHE_PROJECTS_ROOT}/cpd-intelligent-loan-agent-app/templates/input.html">Explore the Code</a>
         <p class="afterbutton ">To view the changes you've made, re-launch the application</p>
         <a class="button is-dark is-medium" title="Re-Launch the Application" href="didact://?commandId=extension.sendToTerminal&text=nodejs%20terminal%7Crestart-app%7Cnodejs%20terminal|python3.8%20app.py">Re-Launch the Application</a>
-        <p style="margin-top:10px;"> Completed the code pattern? Click on
+        <p style="margin-top:10px;"> Click on
           <bold>Clean up</bold> to delete the IBM Cloud services that were created.
         </p>
         <a class="button is-dark is-medium" title="Delete services from IBM Cloud" href="didact://?commandId=extension.sendToTerminal&text=nodejs%20terminal%7Cget-code%7Cnodejs%20terminal|chmod%20%2Bx%20.%2Fdeleteservice.sh%20%26%26%20.%2Fdeleteservice.sh">Clean up</a>

@@ -324,7 +324,7 @@
         <div class="content">
           <p>Create IBM Services</p>
           <p>Login to your IBM Cloud account from the Developer Technology Sandbox to create services.</p>
-          <a class="button is-dark is-medium" title="Login to IBM Cloud" href="didact://?commandId=extension.sendToTerminal&text=nodejs%20terminal%7Clogin-ibmcloud%7Cnodejs%20terminal|ibmcloud%20login%20%26%26%20ibmcloud%20target%20--cf%20%26%26%20ibmcloud%20target%20-g%20Default">Login to IBM Cloud</a>
+          <a class="button is-dark is-medium" title="Login to IBM Cloud" href="didact://?commandId=extension.sendToTerminal&text=nodejs%20terminal%7Cibm-login%7Cnodejs%20terminal|cd%20${CHE_PROJECTS_ROOT}/cpd-intelligent-loan-agent-app%20%26%26%20chmod%20%2Bx%20.%2Flogin.sh%20%26%26%20.%2Flogin.sh">Login to IBM Cloud</a>        
         </div>
       </div>
       <div class="container right">

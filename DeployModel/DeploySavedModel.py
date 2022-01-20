@@ -53,4 +53,6 @@ from datetime import datetime
 now = datetime.now() # current date and time
 date=now.strftime("%Y")+"-"+now.strftime("%m")+"-"+now.strftime("%d")
 
-print("MODEL_URL :", scoring_endpoint+"?version="+date)
+modelurl = scoring_endpoint+"?version="+date
+with open(".env", "a") as f:
+    f.write("\n#MODEL URL\nMODEL_URL=\""+modelurl+"\"\n")

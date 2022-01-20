@@ -28,19 +28,19 @@ app.config.update(dict(
 ))
 
 strings = {
-    "Checking Status": ["no_checking", "less_0", "0_to_200", "greater_200"],
-    "Credit History": ["outstanding_credit", "prior_payments_delayed", "credits_paid_to_date", "all_credits_paid_back", "no_credits"],
-    "Employment Duration": ["unemployed", "less_1", "1_to_4", "4_to_7", "greater_7"],
-    "Existing Savings": ["unknown", "less_100", "100_to_500", "500_to_1000", "greater_1000"],
-    "Foreign Worker": ["yes", "no"],
-    "Housing": ["own", "free", "rent"],
-    "Installment Plans": ["none", "stores", "bank"],
-    "Job": ["skilled", "management_self-employed", "unemployed", "unskilled"],
-    "Owns Property": ["car_other", "savings_insurance", "unknown", "real_estate"],
-    "Sex": ["female", "male"],
-    "Telephone": ["yes", "none"],
-    "Loan Purpose": ["repairs", "appliances", "car_new", "furniture", "car_used", "business", "radio_tv", "education", "vacation", "other", "retraining"],
-    "Others on Loan": ["none", "co-applicant", "guarantor"]
+    "CHECKING STATUS": ["no_checking", "less_0", "0_to_200", "greater_200"],
+    "CREDIT HISTORY": ["outstanding_credit", "prior_payments_delayed", "credits_paid_to_date", "all_credits_paid_back", "no_credits"],
+    "EMPLOYMENT DURATION": ["unemployed", "less_1", "1_to_4", "4_to_7", "greater_7"],
+    "EXISTING SAVINGS": ["unknown", "less_100", "100_to_500", "500_to_1000", "greater_1000"],
+    "FOREIGN WORKER": ["yes", "no"],
+    "HOUSING": ["own", "free", "rent"],
+    "INSTALLMENT PLANS": ["none", "stores", "bank"],
+    "JOB": ["skilled", "management_self-employed", "unemployed", "unskilled"],
+    "OWNS PROPERTY": ["car_other", "savings_insurance", "unknown", "real_estate"],
+    "SEX": ["female", "male"],
+    "TELEPHONE": ["yes", "none"],
+    "LOAN PURPOSE": ["repairs", "appliances", "car_new", "furniture", "car_used", "business", "radio_tv", "education", "vacation", "other", "retraining"],
+    "OTHERS ON LOAN": ["none", "co-applicant", "guarantor"]
 }
 stringstag = {
     "Checking Status": ["no checking", "< 0", "0 to 200", "> 200"],
@@ -104,18 +104,17 @@ def generate_input_lines():
         result += f'<td>{k}'
         result += f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required (this.value)">'
         result += f'</td>'
-        result += f'<br>'
         if (counter % 2 == 1):
             result += f'</tr>'
         counter = counter + 1
 
     counter = 0
-    for k in strings.keys():
+    for k, i in zip(strings.keys(), stringstag.keys()):
         if (counter % 2 == 0):
             result += f'<tr>'
         result += f'<td>{k}'
         result += f'<select class="form-control" name="{k}">'
-        for value, j in zip(strings[k], stringstag[k]):
+        for value, j in zip(strings[k], stringstag[i]):
             result += f'<option value="{value}" selected>{j}</option>'
         result += f'</select>'
         result += f'</td>'

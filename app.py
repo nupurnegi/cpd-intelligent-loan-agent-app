@@ -96,7 +96,7 @@ def generate_input_lines():
         if (counter % 2 == 0):
             result += f'<tr>'
         result += f'<td>{i}'
-        result += f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" id="{k}" value="{vall}" required (this.value)">'
+        result += f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required (this.value)">'
         result += f'</td>'
         if (counter % 2 == 1):
             result += f'</tr>'
@@ -108,7 +108,7 @@ def generate_input_lines():
         if (counter % 2 == 0):
             result += f'<tr>'
         result += f'<td>{i}'
-        result += f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" id="{k}" value="{vall}" required (this.value)">'
+        result += f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required (this.value)">'
         result += f'</td>'
         if (counter % 2 == 1):
             result += f'</tr>'
@@ -119,7 +119,7 @@ def generate_input_lines():
         if (counter % 2 == 0):
             result += f'<tr>'
         result += f'<td>{i}'
-        result += f'<select class="form-control">'
+        result += f'<select class="form-control" name="{k}">'
         for value, j in zip(strings[k], stringstag[i]):
             result += f'<option value="{value}" selected>{j}</option>'
         result += f'</select>'

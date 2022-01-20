@@ -28,19 +28,19 @@ app.config.update(dict(
 ))
 
 strings = {
-    "CHECKING STATUS": ["no_checking", "less_0", "0_to_200", "greater_200"],
-    "CREDIT HISTORY": ["outstanding_credit", "prior_payments_delayed", "credits_paid_to_date", "all_credits_paid_back", "no_credits"],
-    "EMPLOYMENT DURATION": ["unemployed", "less_1", "1_to_4", "4_to_7", "greater_7"],
-    "EXISTING SAVINGS": ["unknown", "less_100", "100_to_500", "500_to_1000", "greater_1000"],
-    "FOREIGN WORKER": ["yes", "no"],
+    "CHECKINGSTATUS": ["no_checking", "less_0", "0_to_200", "greater_200"],
+    "CREDITHISTORY": ["outstanding_credit", "prior_payments_delayed", "credits_paid_to_date", "all_credits_paid_back", "no_credits"],
+    "EMPLOYMENTDURATION": ["unemployed", "less_1", "1_to_4", "4_to_7", "greater_7"],
+    "EXISTINGSAVINGS": ["unknown", "less_100", "100_to_500", "500_to_1000", "greater_1000"],
+    "FOREIGNWORKER": ["yes", "no"],
     "HOUSING": ["own", "free", "rent"],
-    "INSTALLMENT PLANS": ["none", "stores", "bank"],
+    "INSTALLMENTPLANS": ["none", "stores", "bank"],
     "JOB": ["skilled", "management_self-employed", "unemployed", "unskilled"],
-    "OWNS PROPERTY": ["car_other", "savings_insurance", "unknown", "real_estate"],
+    "OWNSPROPERTY": ["car_other", "savings_insurance", "unknown", "real_estate"],
     "SEX": ["female", "male"],
     "TELEPHONE": ["yes", "none"],
-    "LOAN PURPOSE": ["repairs", "appliances", "car_new", "furniture", "car_used", "business", "radio_tv", "education", "vacation", "other", "retraining"],
-    "OTHERS ON LOAN": ["none", "co-applicant", "guarantor"]
+    "LOANPURPOSE": ["repairs", "appliances", "car_new", "furniture", "car_used", "business", "radio_tv", "education", "vacation", "other", "retraining"],
+    "OTHERSONLOAN": ["none", "co-applicant", "guarantor"]
 }
 stringstag = {
     "Checking Status": ["no checking", "< 0", "0 to 200", "> 200"],
@@ -59,12 +59,23 @@ stringstag = {
 } 
 # min, max, default value
 floats = {
+    "INSTALLMENTPERCENT": [1, 10, 3],
+    "LOANAMOUNT": [200, 750000, 3500]
+}
+floatstag = {
     "Installment Percent": [1, 10, 3],
     "Loan Amount": [200, 750000, 3500]
 }
 
 # min, max, default value
 ints = {
+    "AGE": [18, 80, 35],
+    "DEPENDENTS": [0, 10, 1],
+    "CURRENTRESIDENCEDURATION": [1, 10, 3],
+    "EXISTINGCREDITSCOUNT": [1, 7, 1],
+    "LOANDURATION": [1, 72, 24]
+}
+intstag = {
     "Age": [18, 80, 35],
     "Dependents": [0, 10, 1],
     "Current Residence Duration": [1, 10, 3],
@@ -76,33 +87,28 @@ labels = ["No Risk", "Risk"]
 
 
 def generate_input_lines():
-    
-    # f = open("key_file", "r")
-    # obj=json.loads(f.read())
-    # apikey=obj["apikey"]
-    API_KEY = os.environ.get('API_Key')
         
     result = f'<table align="center">'
 
     counter = 0
-    for k in floats.keys():
+    for k, i in zip(floats.keys(), floatstag.keys()):
         minn, maxx, vall = floats[k]
         if (counter % 2 == 0):
             result += f'<tr>'
-        result += f'<td>{k}'
-        result += f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required (this.value)">'
+        result += f'<td>{i}'
+        result += f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" id="{k}" value="{vall}" required (this.value)">'
         result += f'</td>'
         if (counter % 2 == 1):
             result += f'</tr>'
         counter = counter + 1
 
     counter = 0
-    for k in ints.keys():
+    for k,i in zip(ints.keys(),intstag.keys()):
         minn, maxx, vall = ints[k]
         if (counter % 2 == 0):
             result += f'<tr>'
-        result += f'<td>{k}'
-        result += f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required (this.value)">'
+        result += f'<td>{i}'
+        result += f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" id="{k}" value="{vall}" required (this.value)">'
         result += f'</td>'
         if (counter % 2 == 1):
             result += f'</tr>'
@@ -112,8 +118,8 @@ def generate_input_lines():
     for k, i in zip(strings.keys(), stringstag.keys()):
         if (counter % 2 == 0):
             result += f'<tr>'
-        result += f'<td>{k}'
-        result += f'<select class="form-control" name="{k}">'
+        result += f'<td>{i}'
+        result += f'<select class="form-control">'
         for value, j in zip(strings[k], stringstag[i]):
             result += f'<option value="{value}" selected>{j}</option>'
         result += f'</select>'

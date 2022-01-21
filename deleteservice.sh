@@ -1,7 +1,7 @@
 
 servicename="cp-cos"
 # ibmcloud resource service-key-delete "$servicename-creds" -f
-ibmcloud resource service-instance-delete $servicename -f
+ibmcloud resource service-instance-delete $servicename -f --recursive
 # rm cos.json
 # rm cp-cos.txt
 
